@@ -3,7 +3,7 @@
 Welcome to **Cheat-Sheets**, your one-stop collection of pentesting, cybersecurity, and sysadmin cheat sheets.  
 Designed for **quick reference, red team ops, SOC monitoring**, and learning tools fast.
 
-## 📂 Repo Structure
+### 📂 Repo Structure
 Cheat-Sheets/
 ```bash
 .
@@ -16,10 +16,9 @@ Cheat-Sheets/
 ├── README.md
 ├── Web Fuzzing & Recon Cheatsheet.md
 └── 🪟 Windows Privilege Escalation – Cheatsheet.md
----
 ```
 
-## ⚡ Features
+### ⚡ Features
 
 - Concise, real-world-focused reference material  
 - Covers tools, methodologies, and workflows  
