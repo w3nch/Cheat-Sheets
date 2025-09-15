@@ -1,14 +1,14 @@
 #zeek #network
 
 ### **Verify Installation**
-```json
+```shell
 zeek --version
 zeekctl --version
 which zeek
 ```
 
 ### **Running Zeek on PCAP**
-```json
+```shell
 zeek -r sample.pcap
 zeek -r sample.pcap local.zeek
 ls *.log
@@ -42,7 +42,7 @@ ls *.log
 | `zeekc`        | Legacy Zeek compiler           |
 
 ### **Live Capture**
-```json
+```shell
 sudo zeek -i eth0
 sudo zeek -i eth0 local.zeek
 sudo zeek -i eth0 -i eth1
@@ -77,13 +77,13 @@ Some of the most commonly used logs are explained in the given table.
 | _loaded_scripts.log_ | _ssh.log_          | _traceroute.log_ | _weird.log_          |
 
 ### **Quick Log Analysis**
-```json
+```shell
 zeek-cut id.orig_h id.resp_h proto service < conn.log
 zeek-cut id.resp_h < conn.log | sort | uniq -c | sort -rn | head
 awk '{print $1,$2,$3}' conn.log | sort | uniq -c | sort -rn | head
 grep "suspicious" notice.log
 cut -f1,2,3 conn.log | sort | uniq -c | sort -rn
-jq '.' *.json  # if logs are JSON
+jq '.' *.shell  # if logs are JSON
 ```
 
 ### **File Extraction**
@@ -98,7 +98,7 @@ zeek -r sample.pcap --site-policy=policy/frameworks/files/extract-all-files.zeek
 `redef FileExtract::default_extract_dir = "/tmp/zeek_files";`
 
 ### **Custom Local Script Example**
-```json
+```shell
 @load base/protocols/http
 @load base/protocols/dns
 @load base/protocols/ssl
@@ -129,7 +129,7 @@ event new_connection(c: connection)
 `zeek -r sample.pcap local.zeek`
 
 ### **zeekctl Commands**
-```json
+```shell
 sudo zeekctl deploy
 sudo zeekctl start
 sudo zeekctl stop
@@ -172,7 +172,7 @@ sudo zeekctl config
 - Connection events: `new_connection`, `connection_state_remove`, `connection_established`
 - Protocol-specific events: `http_request`, `http_response`, `dns_query`, `ssl_established`, `smtp_mail`
 - Custom logging example:
-```json
+```shell
 global my_log: log_id;
 
 event zeek_init()  
