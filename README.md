@@ -4,7 +4,6 @@ Welcome to **Cheat-Sheets**, your one-stop collection of pentesting, cybersecuri
 Designed for **quick reference, red team ops, SOC monitoring**, and learning tools fast.
 
 ### 📂 Repo Structure
-Cheat-Sheets/
 ```bash
 .
 ├── Awesome All In One Documentation.md
